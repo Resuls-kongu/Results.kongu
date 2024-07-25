@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kongu Engineering College Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .background {
+            width: 100%;
+            height: 100vh;
+            /* Full viewport height */
+            display: flex;
+            align-items: flex-start;
+            /* Align container to the top */
+            justify-content: center;
+            background-color: #e0e0e0;
+            /* Light grey background */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .container {
+            width: 650px;
+            /* Fixed width */
+            height: 330px;
+            /* Fixed height */
+            background-color: #fff;
+            padding: 15px;
+            /* Reduced padding */
+            border-radius: 0;
+            /* Rectangular shape */
+            box-shadow: none;
+            /* Remove shadow for a flat look */
+            box-sizing: border-box;
+            /* Include padding and border in the width and height calculation */
+            margin-top: 20px;
+            /* Ensure some space from the top */
+            position: relative;
+        }
+        .header {
+            position: relative;
+            /* Allows absolute positioning of child elements */
+            text-align: center;
+            margin-bottom: 15px;
+            /* Reduced margin */
+        }
+        .header img {
+            position: absolute;
+            /* Position images absolutely */
+            height: 60px;
+            /* Adjust size */
+            width: auto;
+        }
+        .header img:first-of-type {
+            top: 10px;
+            /* Space from the top */
+            left: 10px;
+            /* Space from the left */
+        }
+        .header img:last-of-type {
+            top: 10px;
+            /* Space from the top */
+            right: 10px;
+            /* Space from the right */
+        }
+        .header-text {
+            display: inline-block;
+            /* Keeps the text block inline with images */
+            text-align: center;
+            margin: 0 auto;
+            /* Center text block */
+            max-width: calc(100% - 120px);
+            /* Adjust for image widths and margins */
+            position: relative;
+            top: 15px;
+            /* Adjust for image height */
+        }
+        .header-text h1 {
+            font-size: 16px;
+            /* Adjusted font size */
+            margin: 5px 0;
+            /* Reduced margin */
+        }
+        .header-text p {
+            font-size: 12px;
+            /* Adjusted font size */
+            margin: 3px 0;
+            /* Reduced margin */
+        }
+        .header h2 {
+            font-size: 14px;
+            /* Adjusted font size */
+            margin: 5px 0;
+            /* Reduced margin */
+            color: green;
+        }
+        .form-group {
+            margin: 10px 0;
+            /* Reduced margin */
+            display: flex;
+            align-items: center;
+            /* Center items vertically */
+            justify-content: space-between;
+            /* Space items horizontally */
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            font-size: 12px;
+            /* Adjusted font size */
+            margin-right: 10px;
+            /* Space between label and input */
+            width: 150px;
+            /* Fixed width for labels */
+            text-align: right;
+            /* Align text to the right */
+        }
+        .form-group input {
+            width: calc(100% - 160px);
+            /* Adjust width to account for label width */
+            padding: 8px;
+            /* Reduced padding */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            /* Slightly reduced border radius */
+            font-size: 12px;
+            /* Adjusted font size */
+        }
+        .buttons {
+            margin: 15px 0;
+            /* Reduced margin */
+            display: flex;
+            flex-direction: column;
+            /* Stack buttons vertically */
+            align-items: center;
+            /* Center buttons horizontally */
+        }
+        .buttons button {
+            padding: 8px 16px;
+            /* Reduced padding */
+            border: none;
+            border-radius: 4px;
+            /* Slightly reduced border radius */
+            background-color: green;
+            color: white;
+            cursor: pointer;
+            margin: 5px 0;
+            /* Reduced margin */
+            font-size: 12px;
+            /* Adjusted font size */
+            width: 100%;
+            /* Full width for buttons */
+            max-width: 180px;
+            /* Max width for larger screens */
+        }
+        .buttons button:hover {
+            background-color: darkgreen;
+        }
+        .footer {
+            margin-top: 15px;
+            /* Reduced margin */
+            font-size: 10px;
+            /* Adjusted font size */
+            text-align: center;
+            /* Center align text */
+        }
+        .footer a {
+            color: blue;
+            text-decoration: none;
+        }
+        .horizontal-lines {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .horizontal-lines div {
+            height: 1px;
+            /* Reduced thickness */
+            width: 100%;
+            /* Full width of container */
+        }
+        .line1 {
+            background-color: darkgreen;
+        }
+        .line2 {
+            background-color: white;
+        }
+        .line3 {
+            background-color: darkgreen;
+        }
+        /* Media Query for mobile devices */
+@media (max-width: 600px) {
+            .header img {
+                height: 50px;
+                /* Smaller logo for very small screens */
+            }
+            .header-text h1 {
+                font-size: 14px;
+                /* Smaller font size */
+            }
+            .header-text p {
+                font-size: 10px;
+                /* Smaller font size */
+            }
+            .header h2 {
+                font-size: 12px;
+                /* Smaller font size */
+            }
+            .form-group label {
+                font-size: 10px;
+                /* Smaller font size */
+                width: 120px;
+                /* Adjust width */
+            }
+            .form-group input {
+                width: calc(100% - 130px);
+                /* Adjust width */
+                font-size: 10px;
+                /* Smaller font size */
+            }
+            .buttons button {
+                padding: 6px 12px;
+                /* Smaller button size */
+                font-size: 10px;
+                /* Smaller font size */
+            }
+            .footer {
+                font-size: 8px;
+                /* Smaller footer font size */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <div class="container">
+            <div class="header">
+                <img src="data:image/png;base64,BASE64_STRING_FOR_FIRST_IMAGE" alt="Kongu Engineering College">
+                <div class="header-text">
+                    <h1>KONGU ENGINEERING COLLEGE (Autonomous)</h1>
+                    <p>
+                        Perundurai, Erode - 638 060, Tamil Nadu, India
+                    </p>
+                    <p>
+                        Office of the Controller of Examinations
+                    </p>
+                </div>
+                <img src="data:image/png;base64,BASE64_STRING_FOR_SECOND_IMAGE" alt="Second Logo">
+            </div>
+            <div class="horizontal-lines">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <div class="header">
+                <h2>End Semester Examinations<br>Provisional Results</h2>
+            </div>
+            <div class="form-group">
+                <label for="registerNumber">Register Number:</label>
+                <input type="text" id="registerNumber" name="registerNumber">
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="text" id="dob" name="dob" placeholder="DD.MM.YYYY">
+            </div>
+            <div class="buttons">
+                <button onclick="getResults()">Get Results</button>
+                <button onclick="resetForm()">Reset</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function getResults() {
+            alert('Fetching results...');
+        }
+
+        function resetForm() {
+            document.getElementById('registerNumber').value = '';
+            document.getElementById('dob').value = '';
+        }
+    </script>
+    <div class="footer">
+        <p>
+            Site Developed and Maintaining by: Programming Team <a href="https://www.google.com" target="_blank">COE</a> | <a href="https://www.google.com" target="_blank">KEC</a>
+        </p>
+    </div>
+</body>
+</html>
